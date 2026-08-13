@@ -10,8 +10,8 @@
   --copper: #ba633b;
   --copper-dark: #7b3e28;
   --sage: #8d9b8e;
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: var(--helvetica);
 }
 
 * {
@@ -28,6 +28,7 @@ body {
   background: var(--paper-bright);
   color: var(--ink);
   font-family: var(--sans);
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
@@ -89,9 +90,10 @@ summary:focus-visible {
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 1.35rem;
   font-style: italic;
+  font-weight: 400;
 }
 
 .brand-name {
@@ -143,6 +145,28 @@ summary:focus-visible {
 .nav-contact {
   padding: 11px 18px;
   border: 1px solid currentColor;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.language-switch a {
+  opacity: 0.46;
+  transition: opacity 180ms ease;
+}
+
+.language-switch a[aria-current="page"],
+.language-switch a:hover {
+  opacity: 1;
+}
+
+.language-switch span {
+  opacity: 0.32;
 }
 
 .mobile-nav {
@@ -205,11 +229,11 @@ summary:focus-visible {
 .hero h1 {
   max-width: 980px;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(4rem, 7.7vw, 8.1rem);
   font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
 }
 
 h1 em,
@@ -319,7 +343,7 @@ h2 em {
 }
 
 .hero-stats strong {
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 2.45rem;
   font-weight: 400;
   line-height: 1;
@@ -363,7 +387,7 @@ h2 em {
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.72rem;
 }
 
@@ -388,11 +412,11 @@ h2 em {
 .project-properties h2,
 .project-method h2 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(3.1rem, 5.5vw, 6.2rem);
   font-weight: 400;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.065em;
 }
 
 .institutional-copy h2 em,
@@ -415,7 +439,7 @@ h2 em {
 
 .lead {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(1.35rem, 2.1vw, 2.15rem);
   line-height: 1.35;
   letter-spacing: -0.02em;
@@ -454,7 +478,7 @@ h2 em {
 
 .principles-strip span {
   color: var(--copper-dark);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 1.25rem;
 }
 
@@ -582,7 +606,7 @@ h2 em {
 
 .project-number {
   color: var(--project-accent);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.9rem;
   transition: color 280ms ease;
 }
@@ -610,11 +634,11 @@ h2 em {
 
 .project-card h3 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(3.3rem, 5vw, 5.6rem);
   font-weight: 400;
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.06em;
 }
 
 .project-card-body p {
@@ -705,7 +729,7 @@ h2 em {
 }
 
 .region-label span {
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 5rem;
   line-height: 0.8;
 }
@@ -819,13 +843,13 @@ h2 em {
 
 .process-list span {
   color: var(--copper-dark);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.9rem;
 }
 
 .process-list h3 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -871,7 +895,7 @@ h2 em {
 
 .collaborator-list span {
   color: #d9a37d;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.78rem;
 }
 
@@ -916,11 +940,11 @@ h2 em {
 .final-cta h2 {
   max-width: 1000px;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(4rem, 7.5vw, 8rem);
   font-weight: 400;
   line-height: 0.93;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.07em;
 }
 
 .final-cta h2 em {
@@ -960,7 +984,7 @@ h2 em {
 .footer-line {
   max-width: 480px;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 1.35rem;
 }
 
@@ -1080,17 +1104,17 @@ h2 em {
 
 .project-hero-index {
   color: var(--project-accent);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 2rem;
 }
 
 .project-hero h1 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(5.5rem, 11vw, 11.5rem);
   font-weight: 400;
   line-height: 0.8;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.085em;
 }
 
 .project-kicker {
@@ -1114,7 +1138,7 @@ h2 em {
 .project-hero-summary > p {
   max-width: 780px;
   margin: 0 0 0 164px;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   line-height: 1.3;
 }
@@ -1125,7 +1149,7 @@ h2 em {
 }
 
 .project-hero-summary span {
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 2.5rem;
   line-height: 1;
 }
@@ -1203,13 +1227,13 @@ h2 em {
 
 .property-detail-grid article > span {
   color: var(--project-accent);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.82rem;
 }
 
 .property-detail-grid h3 {
   margin: 60px 0 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(2.2rem, 3.4vw, 4rem);
   font-weight: 400;
   line-height: 1;
@@ -1258,7 +1282,7 @@ h2 em {
 
 .method-list span {
   color: var(--project-accent);
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: 0.78rem;
 }
 
@@ -1285,7 +1309,7 @@ h2 em {
   place-items: center;
   border: 1px solid var(--ink);
   border-radius: 50%;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-style: italic;
 }
 
@@ -1322,11 +1346,11 @@ h2 em {
 
 .next-project-link h2 {
   margin: 28px 0 0;
-  font-family: var(--serif);
+  font-family: var(--helvetica);
   font-size: clamp(4rem, 7vw, 7.5rem);
   font-weight: 400;
   line-height: 0.85;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.075em;
 }
 
 .next-project-link i {
@@ -1449,6 +1473,13 @@ h2 em {
     font-weight: 650;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  .mobile-nav-panel .mobile-language {
+    margin-top: 8px;
+    border: 1px solid currentColor;
+    padding-inline: 12px;
+    color: var(--copper-dark);
   }
 
   .hero,

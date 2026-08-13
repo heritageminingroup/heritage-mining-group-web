@@ -2,19 +2,38 @@ import Link from "next/link";
 
 type SiteHeaderProps = {
   overlay?: boolean;
+  locale?: "es" | "en";
+  projectSlug?: string;
 };
 
-const navItems = [
-  { href: "/#heritage", label: "Heritage" },
-  { href: "/#portafolio", label: "Portafolio" },
-  { href: "/#region", label: "Región" },
-  { href: "/#responsabilidad", label: "Responsabilidad" },
-];
+const navItems = {
+  es: [
+    { anchor: "heritage", label: "Heritage" },
+    { anchor: "portafolio", label: "Portafolio" },
+    { anchor: "region", label: "Región" },
+    { anchor: "responsabilidad", label: "Responsabilidad" },
+  ],
+  en: [
+    { anchor: "heritage", label: "Heritage" },
+    { anchor: "portfolio", label: "Portfolio" },
+    { anchor: "region", label: "Region" },
+    { anchor: "responsibility", label: "Responsibility" },
+  ],
+};
 
-export function SiteHeader({ overlay = false }: SiteHeaderProps) {
+export function SiteHeader({ overlay = false, locale = "es", projectSlug }: SiteHeaderProps) {
+  const base = locale === "en" ? "/en" : "/";
+  const spanishHref = projectSlug ? `/proyectos/${projectSlug}` : "/";
+  const englishHref = projectSlug ? `/en/projects/${projectSlug}` : "/en";
+  const languageHref = locale === "en" ? spanishHref : englishHref;
+  const homeLabel = locale === "en" ? "Heritage Mining Group, home" : "Heritage Mining Group, inicio";
+  const navigationLabel = locale === "en" ? "Main navigation" : "Navegación principal";
+  const menuLabel = locale === "en" ? "Open navigation" : "Abrir navegación";
+  const contactLabel = locale === "en" ? "Contact" : "Contacto";
+
   return (
     <header className={`site-header${overlay ? " site-header--overlay" : ""}`}>
-      <Link className="brand" href="/" aria-label="Heritage Mining Group, inicio">
+      <Link className="brand" href={base} aria-label={homeLabel}>
         <span className="brand-mark" aria-hidden="true">H</span>
         <span className="brand-name">
           Heritage
@@ -22,20 +41,28 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
         </span>
       </Link>
 
-      <nav className="desktop-nav" aria-label="Navegación principal">
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href}>{item.label}</Link>
+      <nav className="desktop-nav" aria-label={navigationLabel}>
+        {navItems[locale].map((item) => (
+          <Link key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</Link>
         ))}
-        <Link className="nav-contact" href="/#contacto">Contacto</Link>
+        <Link className="nav-contact" href={`${base}#contact`}>{contactLabel}</Link>
+        <div className="language-switch" aria-label={locale === "en" ? "Language" : "Idioma"}>
+          <Link href={spanishHref} aria-current={locale === "es" ? "page" : undefined}>ES</Link>
+          <span aria-hidden="true">/</span>
+          <Link href={englishHref} aria-current={locale === "en" ? "page" : undefined}>EN</Link>
+        </div>
       </nav>
 
       <details className="mobile-nav">
-        <summary aria-label="Abrir navegación">Menú</summary>
+        <summary aria-label={menuLabel}>{locale === "en" ? "Menu" : "Menú"}</summary>
         <div className="mobile-nav-panel">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>{item.label}</Link>
+          {navItems[locale].map((item) => (
+            <Link key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</Link>
           ))}
-          <Link href="/#contacto">Contacto</Link>
+          <Link href={`${base}#contact`}>{contactLabel}</Link>
+          <Link className="mobile-language" href={languageHref}>
+            {locale === "en" ? "Leer en español" : "Read in English"}
+          </Link>
         </div>
       </details>
     </header>

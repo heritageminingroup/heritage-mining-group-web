@@ -15,6 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       "Portafolio de exploración minera en Malargüe, Mendoza, con proyectos de cobre, hierro, manganeso, asfaltita, carbón y azufre.",
+    alternates: {
+      canonical: "/",
+      languages: { es: "/", en: "/en" },
+    },
     keywords: [
       "Heritage Mining Group",
       "exploración minera Argentina",
@@ -29,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Heritage Mining Group",
       description: "Explorando el potencial geológico del sur de Mendoza.",
       images: [{
-        url: `${origin}/og.png`,
+        url: `${origin}/og-helvetica.png`,
         width: 1200,
         height: 630,
         alt: "Heritage Mining Group — exploración mineral en el sur de Mendoza",
@@ -39,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Heritage Mining Group",
       description: "Explorando el potencial geológico del sur de Mendoza.",
-      images: [`${origin}/og.png`],
+      images: [`${origin}/og-helvetica.png`],
     },
     robots: { index: true, follow: true },
   };
