@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type SiteFooterProps = {
   locale?: "es" | "en";
 };
@@ -11,10 +9,10 @@ export function SiteFooter({ locale = "es" }: SiteFooterProps) {
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <Link className="brand brand--footer" href={base} aria-label={isEnglish ? "Heritage Mining Group, home" : "Heritage Mining Group, inicio"}>
+        <a className="brand brand--footer" href={base} aria-label={isEnglish ? "Heritage Mining Group, home" : "Heritage Mining Group, inicio"}>
           <span className="brand-mark" aria-hidden="true">H</span>
           <span className="brand-name">Heritage<small>Mining Group</small></span>
-        </Link>
+        </a>
         <p className="footer-line">
           {isEnglish
             ? "Geology, knowledge and exploration with a long-term perspective."

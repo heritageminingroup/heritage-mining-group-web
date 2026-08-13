@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Project } from "../data/projects";
 import { projects } from "../data/projects";
 import { projectsEn } from "../data/projects-en";
@@ -76,7 +75,7 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
         <section className="project-hero">
           <div className="project-hero-lines" aria-hidden="true" />
           <div className="shell project-hero-content">
-            <Link className="back-link" href={`${homeBase}#${isEnglish ? "portfolio" : "portafolio"}`}><span aria-hidden="true">←</span> {t.portfolio}</Link>
+            <a className="back-link" href={`${homeBase}#${isEnglish ? "portfolio" : "portafolio"}`}><span aria-hidden="true">←</span> {t.portfolio}</a>
             <div className="project-hero-heading">
               <span className="project-hero-index">{project.index}</span>
               <div>
@@ -135,9 +134,9 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
         <aside className="technical-note shell" aria-label={t.noteLabel}><span aria-hidden="true">i</span><p>{t.note}</p></aside>
 
         <section className="next-project">
-          <Link href={`${projectBase}/${nextProject.slug}`} className="shell next-project-link">
+          <a href={`${projectBase}/${nextProject.slug}`} className="shell next-project-link">
             <span>{t.nextProject} · {nextProject.focus}</span><h2>{nextProject.name}</h2><i aria-hidden="true">↗</i>
-          </Link>
+          </a>
         </section>
       </main>
       <SiteFooter locale={locale} />

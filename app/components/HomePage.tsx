@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { projects } from "../data/projects";
 import { projectsEn } from "../data/projects-en";
 import { SiteFooter } from "./SiteFooter";
@@ -143,8 +142,8 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="hero-bottom">
               <p>{t.heroText}</p>
               <div className="hero-actions">
-                <Link className="button button--light" href={`#${portfolioId}`}>{t.explorePortfolio} <span aria-hidden="true">↘</span></Link>
-                <Link className="text-link text-link--light" href="#heritage">{t.knowHeritage} <span aria-hidden="true">→</span></Link>
+                <a className="button button--light" href={`#${portfolioId}`}>{t.explorePortfolio} <span aria-hidden="true">↘</span></a>
+                <a className="text-link text-link--light" href="#heritage">{t.knowHeritage} <span aria-hidden="true">→</span></a>
               </div>
             </div>
             <div className="hero-stats" aria-label={isEnglish ? "Portfolio summary" : "Resumen del portafolio"}>
@@ -181,11 +180,11 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
           <div className="project-list shell">
             {localizedProjects.map((project) => (
-              <Link href={`${base}/${isEnglish ? "projects" : "proyectos"}/${project.slug}`} className={`project-card project-card--${project.accent}`} key={project.slug}>
+              <a href={`${base}/${isEnglish ? "projects" : "proyectos"}/${project.slug}`} className={`project-card project-card--${project.accent}`} key={project.slug}>
                 <div className="project-card-top"><span className="project-number">{project.index}</span><span className="project-focus">{project.focus}</span><span className="project-arrow" aria-hidden="true">↗</span></div>
                 <div className="project-card-body"><h3>{project.name}</h3><p>{project.summary}</p></div>
                 <div className="property-list">{project.properties.map((property) => <span key={property.name}>{property.name}</span>)}</div>
-              </Link>
+              </a>
             ))}
           </div>
           <div className="commodity-line shell" aria-label={t.commoditiesInterest}>
@@ -246,8 +245,8 @@ export function HomePage({ locale }: { locale: Locale }) {
             <h2>{t.ctaTitle}</h2>
             <p>{t.ctaText}</p>
             <div className="final-actions">
-              <Link className="button button--light" href={`#${collaborateId}`}>{t.evaluateCollaboration} <span aria-hidden="true">↗</span></Link>
-              <Link className="text-link text-link--light" href={`#${portfolioId}`}>{t.backPortfolio} <span aria-hidden="true">↑</span></Link>
+              <a className="button button--light" href={`#${collaborateId}`}>{t.evaluateCollaboration} <span aria-hidden="true">↗</span></a>
+              <a className="text-link text-link--light" href={`#${portfolioId}`}>{t.backPortfolio} <span aria-hidden="true">↑</span></a>
             </div>
           </div>
         </section>

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 type SiteHeaderProps = {
   overlay?: boolean;
   locale?: "es" | "en";
@@ -33,23 +31,23 @@ export function SiteHeader({ overlay = false, locale = "es", projectSlug }: Site
 
   return (
     <header className={`site-header${overlay ? " site-header--overlay" : ""}`}>
-      <Link className="brand" href={base} aria-label={homeLabel}>
+      <a className="brand" href={base} aria-label={homeLabel}>
         <span className="brand-mark" aria-hidden="true">H</span>
         <span className="brand-name">
           Heritage
           <small>Mining Group</small>
         </span>
-      </Link>
+      </a>
 
       <nav className="desktop-nav" aria-label={navigationLabel}>
         {navItems[locale].map((item) => (
-          <Link key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</Link>
+          <a key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</a>
         ))}
-        <Link className="nav-contact" href={`${base}#contact`}>{contactLabel}</Link>
+        <a className="nav-contact" href={`${base}#contact`}>{contactLabel}</a>
         <div className="language-switch" aria-label={locale === "en" ? "Language" : "Idioma"}>
-          <Link href={spanishHref} aria-current={locale === "es" ? "page" : undefined}>ES</Link>
+          <a href={spanishHref} aria-current={locale === "es" ? "page" : undefined}>ES</a>
           <span aria-hidden="true">/</span>
-          <Link href={englishHref} aria-current={locale === "en" ? "page" : undefined}>EN</Link>
+          <a href={englishHref} aria-current={locale === "en" ? "page" : undefined}>EN</a>
         </div>
       </nav>
 
@@ -57,12 +55,12 @@ export function SiteHeader({ overlay = false, locale = "es", projectSlug }: Site
         <summary aria-label={menuLabel}>{locale === "en" ? "Menu" : "Menú"}</summary>
         <div className="mobile-nav-panel">
           {navItems[locale].map((item) => (
-            <Link key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</Link>
+            <a key={item.anchor} href={`${base}#${item.anchor}`}>{item.label}</a>
           ))}
-          <Link href={`${base}#contact`}>{contactLabel}</Link>
-          <Link className="mobile-language" href={languageHref}>
+          <a href={`${base}#contact`}>{contactLabel}</a>
+          <a className="mobile-language" href={languageHref}>
             {locale === "en" ? "Leer en español" : "Read in English"}
-          </Link>
+          </a>
         </div>
       </details>
     </header>
