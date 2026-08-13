@@ -4,6 +4,7 @@ import { projects } from "../data/projects";
 import { projectsEn } from "../data/projects-en";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { HtmlLanguage } from "./HtmlLanguage";
 
 type Locale = "es" | "en";
 
@@ -69,6 +70,7 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
 
   return (
     <div lang={locale}>
+      <HtmlLanguage locale={locale} />
       <SiteHeader locale={locale} projectSlug={project.slug} />
       <main className={`project-page project-page--${project.accent}`}>
         <section className="project-hero">

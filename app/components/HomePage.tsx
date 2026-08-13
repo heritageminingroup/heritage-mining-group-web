@@ -3,6 +3,7 @@ import { projects } from "../data/projects";
 import { projectsEn } from "../data/projects-en";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { HtmlLanguage } from "./HtmlLanguage";
 
 type Locale = "es" | "en";
 
@@ -130,6 +131,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   return (
     <div lang={locale}>
+      <HtmlLanguage locale={locale} />
       <SiteHeader overlay locale={locale} />
       <main>
         <section className="hero" aria-labelledby="hero-title">
