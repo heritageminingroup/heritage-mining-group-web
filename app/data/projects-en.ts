@@ -6,9 +6,9 @@ export const projectsEn: Project[] = [
     index: "01",
     name: "Lucero",
     focus: "Copper · base metals",
-    kicker: "Copper exploration in western Malargüe",
+    kicker: "Copper exploration evaluation in western Malargüe",
     summary:
-      "An exploration platform focused on the study of copper and base-metal mineralization in an Andean geological setting.",
+      "An exploration evaluation platform focused on copper and base metals within an Andean geological setting.",
     context:
       "Lucero is located in a geologically complex region, where the interaction of sedimentary units, magmatic activity, structures and hydrothermal fluid circulation creates several exploration scenarios of interest.",
     approach:
@@ -35,9 +35,9 @@ export const projectsEn: Project[] = [
     index: "02",
     name: "Atlas",
     focus: "Iron · manganese",
-    kicker: "Iron and manganese in an Andean geological setting",
+    kicker: "Iron and manganese evaluation in an Andean geological setting",
     summary:
-      "A project combining historical geological and mining background with contemporary technical interpretation tools.",
+      "A progressive evaluation project integrating historical geological and mining background with contemporary technical interpretation tools.",
     context:
       "Atlas brings together iron and manganese exploration targets. Available background information is treated as a starting point for understanding the lithological, structural and territorial setting of known mineral occurrences.",
     approach:
@@ -64,9 +64,9 @@ export const projectsEn: Project[] = [
     index: "03",
     name: "Tinta Nero",
     focus: "Asphaltite",
-    kicker: "Asphaltites of southern Mendoza",
+    kicker: "Evaluation of asphaltites in southern Mendoza",
     summary:
-      "Four properties focused on the study of asphaltite occurrences within the sedimentary systems of southern Mendoza.",
+      "Four properties focused on the progressive study of asphaltite occurrences within the sedimentary systems of southern Mendoza.",
     context:
       "The project is located in a region with a long history of geological and hydrocarbon research. Historical records are used to guide new investigations and are not extrapolated into present-day economic conclusions.",
     approach:
@@ -103,9 +103,9 @@ export const projectsEn: Project[] = [
     index: "04",
     name: "Los Seis",
     focus: "Coal",
-    kicker: "Coal exploration in Malargüe",
+    kicker: "Geological evaluation of coal in Malargüe",
     summary:
-      "Two properties focused on the geological evaluation of coal within sedimentary environments in southern Mendoza.",
+      "Two properties focused on the progressive geological evaluation of coal within sedimentary environments in southern Mendoza.",
     context:
       "The project seeks to understand the distribution and characteristics of target horizons within a regional sedimentary framework, consistently distinguishing historical background from current technical evidence.",
     approach:
@@ -132,9 +132,9 @@ export const projectsEn: Project[] = [
     index: "05",
     name: "Volcán Overo",
     focus: "Sulfur",
-    kicker: "Sulfur in the Andes of southern Mendoza",
+    kicker: "Sulfur evaluation in the Andes of southern Mendoza",
     summary:
-      "A project associated with sulfur exploration in a geological environment of volcanic and hydrothermal origin.",
+      "A sulfur exploration evaluation project within a geological environment shaped by volcanic and hydrothermal processes.",
     context:
       "Volcán Overo adds a distinct geological expression to the portfolio and expands its diversification into mineral systems associated with volcanic and hydrothermal processes.",
     approach:

@@ -27,6 +27,22 @@ const content = {
       ["Desarrollo progresivo", "Ajustamos cada programa al nivel de conocimiento de la propiedad."],
       ["Exploración responsable", "Incorporamos criterios ambientales y territoriales desde el inicio."],
     ],
+    about: "Sobre nosotros",
+    aboutKicker: "Legado y evolución",
+    aboutTitle: <>Un legado que <em>evoluciona.</em></>,
+    aboutP1: "Heritage Mining Group nace de una historia familiar vinculada a la minería, la visión empresarial y el conocimiento del territorio mendocino.",
+    aboutP2: "El origen del portafolio se remonta a José A. Fugazzotto, descendiente de inmigrantes italianos y empresario cuya trayectoria estuvo marcada por el trabajo, la iniciativa y la capacidad de adaptarse a contextos desafiantes. En una etapa especialmente compleja para la actividad minera en Mendoza, participó en la conformación de un conjunto diversificado de activos mineros y desarrolló, paralelamente, inversiones vinculadas al sector inmobiliario.",
+    aboutP3: "Tras su fallecimiento inesperado, su hijo Luciano Fugazzotto asumió el desafío de recuperar, organizar y renovar ese legado. Como fundador de Heritage Mining Group, Luciano impulsa una nueva etapa orientada a integrar los antecedentes históricos con herramientas contemporáneas de análisis, cartografía, GIS, gestión de información y evaluación progresiva de proyectos.",
+    aboutP4: "Heritage Mining Group representa la evolución de esa historia: una plataforma construida sobre conocimiento acumulado, visión de largo plazo y el compromiso de transformar un legado familiar en un portafolio técnicamente estructurado y preparado para nuevas oportunidades de colaboración.",
+    aboutPortraitAlt: "Retrato de José Arturo Fugazzotto",
+    aboutPortraitCaption: "El origen de una historia vinculada a la minería y al desarrollo empresarial.",
+    aboutLucianoAlt: "Retrato de Luciano Fugazzotto",
+    aboutLucianoCaption: "Fundador de Heritage Mining Group y responsable de la nueva etapa de desarrollo del portafolio.",
+    aboutHighlights: [
+      ["Nuestro origen", "Una historia familiar de trabajo, iniciativa empresarial y vinculación con la minería mendocina."],
+      ["Nuestra evolución", "La recuperación y organización de un legado mediante herramientas y criterios técnicos contemporáneos."],
+      ["Hacia dónde vamos", "Construir proyectos mejor comprendidos, desarrollados responsablemente y preparados para relaciones estratégicas de largo plazo."],
+    ],
     portfolio: "Portafolio",
     diversification: "Diversificación geológica",
     portfolioTitle: <>Cinco proyectos.<br /><em>Una región estratégica.</em></>,
@@ -59,8 +75,11 @@ const content = {
     nextStep: "El próximo paso",
     ctaTitle: <>Cada proyecto comienza con una <em>pregunta geológica.</em></>,
     ctaText: "Reunimos la información, construimos el modelo y definimos qué debe seguir.",
-    evaluateCollaboration: "Evaluar una colaboración",
-    backPortfolio: "Volver al portafolio",
+    institutionalContact: "Contacto institucional",
+    contactRole: "Project Owner & Development Lead",
+    emailLabel: "Enviar un correo",
+    linkedInLabel: "LinkedIn",
+    linkedInDescription: "Perfil profesional",
   },
   en: {
     heroTitle: <>Exploring the <em>geological potential</em> of southern Mendoza</>,
@@ -81,6 +100,22 @@ const content = {
       ["Technical rigor", "We distinguish historical background from currently verified information."],
       ["Progressive development", "We tailor each program to the knowledge level of the property."],
       ["Responsible exploration", "We incorporate environmental and territorial criteria from the outset."],
+    ],
+    about: "About us",
+    aboutKicker: "Legacy and evolution",
+    aboutTitle: <>A legacy in <em>evolution.</em></>,
+    aboutP1: "Heritage Mining Group was born from a family history connected to mining, entrepreneurial vision and knowledge of the Mendoza territory.",
+    aboutP2: "The origins of the portfolio can be traced to José A. Fugazzotto, a descendant of Italian immigrants and an entrepreneur whose career was shaped by hard work, initiative and the ability to adapt to challenging circumstances. During a particularly difficult period for mining in Mendoza, he participated in the development of a diversified group of mineral assets while also pursuing investments associated with the real estate sector.",
+    aboutP3: "Following his unexpected passing, his son Luciano Fugazzotto took on the challenge of recovering, organizing and renewing that legacy. As founder of Heritage Mining Group, Luciano is leading a new stage that brings historical background together with contemporary tools for analysis, mapping, GIS, information management and progressive project evaluation.",
+    aboutP4: "Heritage Mining Group represents the evolution of that history: a platform built on accumulated knowledge, a long-term perspective and a commitment to transforming a family legacy into a technically structured portfolio prepared for new opportunities for collaboration.",
+    aboutPortraitAlt: "Portrait of José Arturo Fugazzotto",
+    aboutPortraitCaption: "The origin of a story connected to mining and entrepreneurial development.",
+    aboutLucianoAlt: "Portrait of Luciano Fugazzotto",
+    aboutLucianoCaption: "Founder of Heritage Mining Group and lead for the portfolio’s new stage of development.",
+    aboutHighlights: [
+      ["Our origin", "A family history of hard work, entrepreneurial initiative and involvement in Mendoza’s mining sector."],
+      ["Our evolution", "The recovery and organization of a legacy through contemporary technical tools and criteria."],
+      ["Where we are going", "To build better-understood, responsibly developed projects prepared for long-term strategic relationships."],
     ],
     portfolio: "Portfolio",
     diversification: "Geological diversification",
@@ -114,8 +149,11 @@ const content = {
     nextStep: "The next step",
     ctaTitle: <>Every project begins with a <em>geological question.</em></>,
     ctaText: "We bring the information together, build the model and define what should come next.",
-    evaluateCollaboration: "Explore a collaboration",
-    backPortfolio: "Back to portfolio",
+    institutionalContact: "Institutional contact",
+    contactRole: "Project Owner & Development Lead",
+    emailLabel: "Send an email",
+    linkedInLabel: "LinkedIn",
+    linkedInDescription: "Professional profile",
   },
 };
 
@@ -123,6 +161,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   const t = content[locale];
   const isEnglish = locale === "en";
   const localizedProjects = isEnglish ? projectsEn : projects;
+  const aboutId = isEnglish ? "about-us" : "sobre-nosotros";
   const portfolioId = isEnglish ? "portfolio" : "portafolio";
   const responsibilityId = isEnglish ? "responsibility" : "responsabilidad";
   const collaborateId = isEnglish ? "collaborate" : "colaborar";
@@ -142,8 +181,8 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="hero-bottom">
               <p>{t.heroText}</p>
               <div className="hero-actions">
-                <a className="button button--light" href={`#${portfolioId}`}>{t.explorePortfolio} <span aria-hidden="true">↘</span></a>
-                <a className="text-link text-link--light" href="#heritage">{t.knowHeritage} <span aria-hidden="true">→</span></a>
+                <a className="button button--light" href={`#${portfolioId}`}>{t.explorePortfolio} <span className="ui-arrow" aria-hidden="true">{"↘\uFE0E"}</span></a>
+                <a className="text-link text-link--light" href="#heritage">{t.knowHeritage} <span className="ui-arrow" aria-hidden="true">{"→\uFE0E"}</span></a>
               </div>
             </div>
             <div className="hero-stats" aria-label={isEnglish ? "Portfolio summary" : "Resumen del portafolio"}>
@@ -172,16 +211,67 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
+        <section className="section about" id={aboutId}>
+          <div className="shell about-heading">
+            <div className="section-index"><span>02</span><p>{t.about}</p></div>
+            <div>
+              <p className="eyebrow">{t.aboutKicker}</p>
+              <h2>{t.aboutTitle}</h2>
+            </div>
+          </div>
+          <div className="shell about-story">
+            <div className="about-portraits" aria-label={isEnglish ? "Heritage Mining Group family legacy" : "Legado familiar de Heritage Mining Group"}>
+              <figure className="about-portrait">
+                <img
+                  src="/jose-arturo-fugazzotto.png"
+                  alt={t.aboutPortraitAlt}
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>José Arturo Fugazzotto</strong>
+                  <span>{t.aboutPortraitCaption}</span>
+                </figcaption>
+              </figure>
+              <figure className="about-portrait">
+                <img
+                  src="/luciano-fugazzotto-bw-v2.png"
+                  alt={t.aboutLucianoAlt}
+                  width="1086"
+                  height="1448"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>Luciano Fugazzotto</strong>
+                  <span>{t.aboutLucianoCaption}</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="about-copy">
+              <p className="lead">{t.aboutP1}</p>
+              <p>{t.aboutP2}</p>
+              <p>{t.aboutP3}</p>
+              <p>{t.aboutP4}</p>
+            </div>
+          </div>
+          <div className="shell about-highlights">
+            {t.aboutHighlights.map(([title, text]) => (
+              <article key={title}><span>{title}</span><p>{text}</p></article>
+            ))}
+          </div>
+        </section>
+
         <section className="section portfolio" id={portfolioId}>
           <div className="shell section-heading section-heading--dark">
-            <div className="section-index"><span>02</span><p>{t.portfolio}</p></div>
+            <div className="section-index"><span>03</span><p>{t.portfolio}</p></div>
             <div><p className="eyebrow eyebrow--light">{t.diversification}</p><h2>{t.portfolioTitle}</h2></div>
             <p className="section-intro">{t.portfolioIntro}</p>
           </div>
           <div className="project-list shell">
             {localizedProjects.map((project) => (
               <a href={`${base}/${isEnglish ? "projects" : "proyectos"}/${project.slug}`} className={`project-card project-card--${project.accent}`} key={project.slug}>
-                <div className="project-card-top"><span className="project-number">{project.index}</span><span className="project-focus">{project.focus}</span><span className="project-arrow" aria-hidden="true">↗</span></div>
+                <div className="project-card-top"><span className="project-number">{project.index}</span><span className="project-focus">{project.focus}</span><span className="project-arrow ui-arrow" aria-hidden="true">{"↗\uFE0E"}</span></div>
                 <div className="project-card-body"><h3>{project.name}</h3><p>{project.summary}</p></div>
                 <div className="property-list">{project.properties.map((property) => <span key={property.name}>{property.name}</span>)}</div>
               </a>
@@ -198,7 +288,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               <div className="region-label"><span>ARG</span><p>{t.rangeReference}</p></div>
             </div>
             <div className="region-copy">
-              <div className="section-index"><span>03</span><p>{t.regionalContext}</p></div>
+              <div className="section-index"><span>04</span><p>{t.regionalContext}</p></div>
               <p className="eyebrow">Malargüe, Mendoza</p>
               <h2>{t.regionTitle}</h2>
               <p className="lead">{t.regionLead}</p>
@@ -212,7 +302,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section className="section responsibility" id={responsibilityId}>
           <div className="shell responsibility-grid">
             <div className="responsibility-heading">
-              <div className="section-index"><span>04</span><p>{t.howWeExplore}</p></div>
+              <div className="section-index"><span>05</span><p>{t.howWeExplore}</p></div>
               <p className="eyebrow">{t.responsibleExploration}</p>
               <h2>{t.responsibilityTitle}</h2>
               <p className="lead">{t.responsibilityLead}</p>
@@ -226,7 +316,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section className="section collaboration" id={collaborateId}>
           <div className="shell collaboration-grid">
             <div>
-              <div className="section-index"><span>05</span><p>{t.collaboration}</p></div>
+              <div className="section-index"><span>06</span><p>{t.collaboration}</p></div>
               <p className="eyebrow">{t.complementary}</p>
               <h2>{t.collaborationTitle}</h2>
             </div>
@@ -244,9 +334,24 @@ export function HomePage({ locale }: { locale: Locale }) {
             <p className="eyebrow eyebrow--light">{t.nextStep}</p>
             <h2>{t.ctaTitle}</h2>
             <p>{t.ctaText}</p>
-            <div className="final-actions">
-              <a className="button button--light" href={`#${collaborateId}`}>{t.evaluateCollaboration} <span aria-hidden="true">↗</span></a>
-              <a className="text-link text-link--light" href={`#${portfolioId}`}>{t.backPortfolio} <span aria-hidden="true">↑</span></a>
+            <div className="contact-card">
+              <div className="contact-identity">
+                <span>{t.institutionalContact}</span>
+                <strong>Luciano Fugazzotto</strong>
+                <small>{t.contactRole}</small>
+              </div>
+              <div className="contact-channels">
+                <a className="contact-channel" href="mailto:heritageminingroup@gmail.com">
+                  <i aria-hidden="true">@</i>
+                  <span><small>{t.emailLabel}</small>heritageminingroup@gmail.com</span>
+                  <b className="ui-arrow" aria-hidden="true">{"↗\uFE0E"}</b>
+                </a>
+                <a className="contact-channel" href="https://www.linkedin.com/in/luciano-fugazzotto/" target="_blank" rel="noreferrer">
+                  <i aria-hidden="true">in</i>
+                  <span><small>{t.linkedInLabel}</small>{t.linkedInDescription}</span>
+                  <b className="ui-arrow" aria-hidden="true">{"↗\uFE0E"}</b>
+                </a>
+              </div>
             </div>
           </div>
         </section>

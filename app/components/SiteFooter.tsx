@@ -32,6 +32,9 @@ export function SiteFooter({ locale = "es" }: SiteFooterProps) {
         </p>
         <div className="footer-meta">
           <span>© {new Date().getFullYear()} Heritage Mining Group</span>
+          <a href={isEnglish ? "/en/legal-notice" : "/aviso-legal"}>
+            {isEnglish ? "Legal and privacy notice" : "Aviso legal y privacidad"}
+          </a>
           <a href="https://www.pexels.com/photo/landscape-of-barren-mountains-21692507/" target="_blank" rel="noreferrer">
             {isEnglish ? "Landscape photography: Emiliano Arano / Pexels" : "Fotografía de paisaje: Emiliano Arano / Pexels"}
           </a>

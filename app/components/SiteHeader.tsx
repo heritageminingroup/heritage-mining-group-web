@@ -2,27 +2,37 @@ type SiteHeaderProps = {
   overlay?: boolean;
   locale?: "es" | "en";
   projectSlug?: string;
+  spanishHrefOverride?: string;
+  englishHrefOverride?: string;
 };
 
 const navItems = {
   es: [
     { anchor: "heritage", label: "Heritage" },
+    { anchor: "sobre-nosotros", label: "Sobre nosotros" },
     { anchor: "portafolio", label: "Portafolio" },
     { anchor: "region", label: "Región" },
     { anchor: "responsabilidad", label: "Responsabilidad" },
   ],
   en: [
     { anchor: "heritage", label: "Heritage" },
+    { anchor: "about-us", label: "About us" },
     { anchor: "portfolio", label: "Portfolio" },
     { anchor: "region", label: "Region" },
     { anchor: "responsibility", label: "Responsibility" },
   ],
 };
 
-export function SiteHeader({ overlay = false, locale = "es", projectSlug }: SiteHeaderProps) {
+export function SiteHeader({
+  overlay = false,
+  locale = "es",
+  projectSlug,
+  spanishHrefOverride,
+  englishHrefOverride,
+}: SiteHeaderProps) {
   const base = locale === "en" ? "/en" : "/";
-  const spanishHref = projectSlug ? `/proyectos/${projectSlug}` : "/";
-  const englishHref = projectSlug ? `/en/projects/${projectSlug}` : "/en";
+  const spanishHref = spanishHrefOverride ?? (projectSlug ? `/proyectos/${projectSlug}` : "/");
+  const englishHref = englishHrefOverride ?? (projectSlug ? `/en/projects/${projectSlug}` : "/en");
   const languageHref = locale === "en" ? spanishHref : englishHref;
   const homeLabel = locale === "en" ? "Heritage Mining Group, home" : "Heritage Mining Group, inicio";
   const navigationLabel = locale === "en" ? "Main navigation" : "Navegación principal";

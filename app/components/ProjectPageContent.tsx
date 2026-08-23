@@ -12,6 +12,10 @@ const labels = {
     portfolio: "Portafolio",
     project: "Proyecto",
     properties: "Propiedades",
+    regionalSetting: "Ámbito regional",
+    regionalSettingValue: "Malargüe · Mendoza",
+    workStage: "Etapa de trabajo",
+    workStageValue: "Evaluación exploratoria progresiva",
     framework: "Marco del proyecto",
     geologicalContext: "Contexto geológico",
     overviewTitle: <>Construir una comprensión <em>progresivamente más sólida.</em></>,
@@ -36,6 +40,10 @@ const labels = {
     portfolio: "Portfolio",
     project: "Project",
     properties: "Properties",
+    regionalSetting: "Regional setting",
+    regionalSettingValue: "Malargüe · Mendoza",
+    workStage: "Work stage",
+    workStageValue: "Progressive exploration evaluation",
     framework: "Project framework",
     geologicalContext: "Geological context",
     overviewTitle: <>Building a <em>progressively stronger understanding.</em></>,
@@ -75,7 +83,7 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
         <section className="project-hero">
           <div className="project-hero-lines" aria-hidden="true" />
           <div className="shell project-hero-content">
-            <a className="back-link" href={`${homeBase}#${isEnglish ? "portfolio" : "portafolio"}`}><span aria-hidden="true">←</span> {t.portfolio}</a>
+            <a className="back-link" href={`${homeBase}#${isEnglish ? "portfolio" : "portafolio"}`}><span className="ui-arrow" aria-hidden="true">{"←\uFE0E"}</span> {t.portfolio}</a>
             <div className="project-hero-heading">
               <span className="project-hero-index">{project.index}</span>
               <div>
@@ -86,7 +94,20 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
             </div>
             <div className="project-hero-summary">
               <p>{project.summary}</p>
-              <div><span>{String(project.properties.length).padStart(2, "0")}</span><small>{t.properties}</small></div>
+              <dl className="project-hero-facts">
+                <div>
+                  <dt>{t.properties}</dt>
+                  <dd>{String(project.properties.length).padStart(2, "0")}</dd>
+                </div>
+                <div>
+                  <dt>{t.regionalSetting}</dt>
+                  <dd>{t.regionalSettingValue}</dd>
+                </div>
+                <div>
+                  <dt>{t.workStage}</dt>
+                  <dd>{t.workStageValue}</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </section>
@@ -135,7 +156,7 @@ export function ProjectPageContent({ project, locale }: { project: Project; loca
 
         <section className="next-project">
           <a href={`${projectBase}/${nextProject.slug}`} className="shell next-project-link">
-            <span>{t.nextProject} · {nextProject.focus}</span><h2>{nextProject.name}</h2><i aria-hidden="true">↗</i>
+            <span>{t.nextProject} · {nextProject.focus}</span><h2>{nextProject.name}</h2><i className="ui-arrow" aria-hidden="true">{"↗\uFE0E"}</i>
           </a>
         </section>
       </main>

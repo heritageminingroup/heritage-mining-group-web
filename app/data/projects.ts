@@ -22,9 +22,9 @@ export const projects: Project[] = [
     index: "01",
     name: "Lucero",
     focus: "Cobre · metales base",
-    kicker: "Exploración de cobre en el oeste de Malargüe",
+    kicker: "Evaluación exploratoria de cobre en el oeste de Malargüe",
     summary:
-      "Una plataforma de exploración orientada al estudio de mineralizaciones de cobre y metales base en un ambiente geológico andino.",
+      "Una plataforma de evaluación exploratoria orientada al estudio de cobre y metales base dentro de un ambiente geológico andino.",
     context:
       "Lucero se ubica en una región de geología compleja, donde la interacción entre unidades sedimentarias, actividad magmática, estructuras y circulación de fluidos hidrotermales configura distintos escenarios de interés exploratorio.",
     approach:
@@ -51,9 +51,9 @@ export const projects: Project[] = [
     index: "02",
     name: "Atlas",
     focus: "Hierro · manganeso",
-    kicker: "Hierro y manganeso en un contexto geológico andino",
+    kicker: "Evaluación de hierro y manganeso en un contexto geológico andino",
     summary:
-      "Un proyecto que combina antecedentes geológicos y mineros históricos con nuevas herramientas de interpretación técnica.",
+      "Un proyecto de evaluación progresiva que integra antecedentes geológicos y mineros históricos con herramientas contemporáneas de interpretación técnica.",
     context:
       "Atlas reúne objetivos vinculados a hierro y manganeso. Los antecedentes disponibles se consideran un punto de partida para estudiar el contexto litológico, estructural y territorial de las manifestaciones conocidas.",
     approach:
@@ -80,9 +80,9 @@ export const projects: Project[] = [
     index: "03",
     name: "Tinta Nero",
     focus: "Asfaltita",
-    kicker: "Asfaltitas del sur de Mendoza",
+    kicker: "Evaluación de asfaltitas del sur de Mendoza",
     summary:
-      "Cuatro propiedades orientadas al estudio de ocurrencias de asfaltita dentro de los sistemas sedimentarios del sur de Mendoza.",
+      "Cuatro propiedades orientadas al estudio progresivo de ocurrencias de asfaltita dentro de los sistemas sedimentarios del sur de Mendoza.",
     context:
       "El proyecto forma parte de una región con una extensa historia de investigación geológica e hidrocarburífera. Los registros históricos se utilizan para orientar nuevas investigaciones, sin extrapolarlos hacia conclusiones económicas actuales.",
     approach:
@@ -119,9 +119,9 @@ export const projects: Project[] = [
     index: "04",
     name: "Los Seis",
     focus: "Carbón",
-    kicker: "Exploración de carbón en Malargüe",
+    kicker: "Evaluación geológica de carbón en Malargüe",
     summary:
-      "Dos propiedades orientadas a la evaluación geológica de carbón dentro de ambientes sedimentarios del sur mendocino.",
+      "Dos propiedades orientadas a la evaluación geológica progresiva de carbón dentro de ambientes sedimentarios del sur mendocino.",
     context:
       "El proyecto busca comprender la distribución y las características de los niveles de interés dentro de un marco sedimentario regional, distinguiendo siempre los antecedentes históricos de la evidencia técnica actual.",
     approach:
@@ -148,9 +148,9 @@ export const projects: Project[] = [
     index: "05",
     name: "Volcán Overo",
     focus: "Azufre",
-    kicker: "Azufre en los Andes del sur de Mendoza",
+    kicker: "Evaluación de azufre en los Andes del sur de Mendoza",
     summary:
-      "Un proyecto asociado a la exploración de azufre en un ambiente geológico de origen volcánico e hidrotermal.",
+      "Un proyecto de evaluación exploratoria de azufre dentro de un ambiente geológico de carácter volcánico e hidrotermal.",
     context:
       "Volcán Overo incorpora una expresión geológica diferente al portafolio y amplía su diversificación hacia sistemas minerales vinculados con procesos volcánicos e hidrotermales.",
     approach:

@@ -20,6 +20,20 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       canonical: `/proyectos/${slug}`,
       languages: { es: `/proyectos/${slug}`, en: `/en/projects/${slug}` },
     },
+    openGraph: {
+      type: "article",
+      locale: "es_AR",
+      title: project.seoTitle,
+      description: project.seoDescription,
+      url: `/proyectos/${slug}`,
+      images: [{ url: "/og.png", width: 1731, height: 909, alt: `${project.name} - Heritage Mining Group` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.seoTitle,
+      description: project.seoDescription,
+      images: ["/og.png"],
+    },
   };
 }
 
